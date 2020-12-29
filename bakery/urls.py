@@ -6,7 +6,7 @@ from django.views.generic.base import RedirectView
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 from .users.views import UserViewSet, UserCreateViewSet
-from .inventory.views import IngredientViewSet, BakeryItemViewSet
+from .inventory.views import IngredientViewSet, BakeryItemViewSet, OrderViewSet
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -14,6 +14,7 @@ router.register(r'users', UserCreateViewSet)
 
 router.register(r'ingredients', IngredientViewSet)
 router.register(r'bakeryitems', BakeryItemViewSet)
+router.register(r'orders', OrderViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
